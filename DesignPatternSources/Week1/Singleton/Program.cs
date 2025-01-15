@@ -1,3 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Console.WriteLine("Hello, World!");
+
+using Singleton;
+
+public class Program
+{
+    public static void Main()
+    {
+        var gameManager = GameManager.Instance;
+        
+        gameManager.ChangeGameState("Playing");
+        gameManager.ChangeGameState("Paused");
+    }
+}
