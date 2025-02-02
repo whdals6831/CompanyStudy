@@ -9,3 +9,8 @@
 ### 1주차
 
 - Singleton 패턴
+
+
+### 2주차
+
+* Factory Method 패턴
