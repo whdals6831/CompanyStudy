@@ -5,17 +5,17 @@ public class Program
 {
     public static void Main()
     {
-        var apartFactory = new ApartmentFactory();
-        var houseFactory = new HouseFactory();
+        var banpoXiFactory = new BanpoXiApartmentFactory();
+        var lotteCastleFactory = new LotteCastleApartmentFactory();
 
-        IResidence apartment = apartFactory.CreateResidence();
-        apartment.RingDoorBell();
-        apartment.Enter();
-        apartment.Leave();
-        
-        IResidence house = houseFactory.CreateResidence();
-        house.RingDoorBell();
-        house.Enter();
-        house.Leave();
+        IApartment banpoXi = banpoXiFactory.Construct();
+        banpoXi.CreateElevator();
+        banpoXi.CreateRoom();
+        banpoXi.CreateWindow();
+
+        IApartment lotteCastle = lotteCastleFactory.Construct();
+        lotteCastle.CreateElevator();
+        lotteCastle.CreateRoom();
+        lotteCastle.CreateWindow();
     }
 }

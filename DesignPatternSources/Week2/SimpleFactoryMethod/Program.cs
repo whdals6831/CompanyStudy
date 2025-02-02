@@ -1,21 +1,19 @@
-﻿using SimpleFactoryMethod.Enum;
-using SimpleFactoryMethod.Factory;
-using SimpleFactoryMethod.Interface;
+﻿using SimpleFactoryMethod.Factory;
 
 public class Program
 {
     public static void Main()
     {
-        var factory = new SimpleResidenceFactory();
+        var factory = new ApartmentFactory();
         
-        IResidence apartment = factory.CreateResidence(ResidenceType.Apartment);
-        apartment.RingDoorBell();
-        apartment.Enter();
-        apartment.Leave();
+        var banpoXi = factory.Construct("BanpoXi");
+        banpoXi.CreateElevator();
+        banpoXi.CreateRoom();
+        banpoXi.CreateWindow();
         
-        IResidence house = factory.CreateResidence(ResidenceType.House);
-        house.RingDoorBell();
-        house.Enter();
-        house.Leave();
+        var lotteCastle = factory.Construct("LotteCastle");
+        lotteCastle.CreateElevator();
+        lotteCastle.CreateRoom();
+        lotteCastle.CreateWindow();
     }
 }

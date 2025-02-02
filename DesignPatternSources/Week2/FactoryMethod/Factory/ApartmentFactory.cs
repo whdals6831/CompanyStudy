@@ -1,12 +1,17 @@
-using FactoryMethod.Domain;
 using FactoryMethod.Interface;
 
 namespace FactoryMethod.Factory;
 
-public class ApartmentFactory : IResidenceFactory
+public abstract class ApartmentFactory
 {
-    public IResidence CreateResidence()
+    public IApartment Construct()
     {
-        return new Apartment();
+        IApartment apartment = CreateApartment();
+        apartment.Build();
+
+        return apartment;
     }
+
+    protected abstract IApartment CreateApartment();
 }
+
